@@ -1,0 +1,34 @@
+
+Initial:
+( & L_a((((~(mud a))))) & L_a(((((mud a))))))
+
+==> sense(a, b) +:
+( & K_a(((((mud b))))) & L_a((((~(mud a))))) & L_a(((((mud a))))))
+
+   ==> sense(a, c) +:
+   ( & K_a(((((mud b) & (mud c))))) & L_a((((~(mud a) & (mud b) & (mud c))))))
+
+   ==> sense(a, c) -:
+   ( & K_a(((((mud b) & ~(mud c))))) & L_a((((~(mud a))))) & L_a(((((mud a))))))
+
+      ==> ask(a, b, c) +:
+      ( & K_a(((((mud b) & (mud c))))) & L_a((((~(mud a) & (mud b) & (mud c))))))
+
+      ==> ask(a, b, c) -:
+      ( & K_a(((((mud b) & (mud c))))) & L_a((((~(mud a) & (mud b) & (mud c))))))
+
+==> sense(a, b) -:
+( & K_a((((~(mud b))))) & L_a((((~(mud a))))) & L_a(((((mud a))))))
+
+   ==> sense(a, c) +:
+   ( & K_a((((~(mud b) & (mud c))))) & L_a((((~(mud a))))) & L_a(((((mud a))))))
+
+      ==> ask(a, b, c) +:
+      ( & K_a(((((mud b) & (mud c))))) & L_a((((~(mud a) & (mud b) & (mud c))))))
+
+      ==> ask(a, b, c) -:
+      ( & K_a(((((mud b) & (mud c))))) & L_a((((~(mud a) & (mud b) & (mud c))))))
+
+   ==> sense(a, c) -:
+   ( & K_a(((((mud b) & (mud c))))) & L_a((((~(mud a) & (mud b) & (mud c))))))
+
